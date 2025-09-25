@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultron Agent - Activity Log Demo</title>
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --accent-bg: #2a2a2a;
+            --primary-text: #ffffff;
+            --secondary-text: #cccccc;
+            --accent-text: #00ff88;
+            --border-color: #333333;
+            --success-color: #00ff88;
+            --warning-color: #ffaa00;
+            --error-color: #ff4444;
+            --info-color: #00aaff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--primary-bg);
+            color: var(--primary-text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff88, #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .panel-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-text);
+        }
+
+        .activity-log {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            border: 1px solid #333;
+        }
+
+        .log-entry {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .log-user {
+            border-left-color: var(--info-color);
+            background: rgba(0, 170, 255, 0.1);
+        }
+
+        .log-ai {
+            border-left-color: var(--accent-text);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .log-system {
+            border-left-color: var(--warning-color);
+            background: rgba(255, 170, 0, 0.1);
+        }
+
+        .log-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+            font-size: 0.8rem;
+        }
+
+        .log-type {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .log-time {
+            color: #999;
+        }
+
+        .controls {
+            margin-top: 16px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            background: var(--accent-bg);
+            color: var(--primary-text);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--border-color);
+            border-color: var(--accent-text);
+        }
+
+        .button.primary {
+            background: var(--accent-text);
+            color: var(--primary-bg);
+            border-color: var(--accent-text);
+        }
+
+        .button.primary:hover {
+            background: #00cc66;
+            border-color: #00cc66;
+        }
+
+        .input {
+            background: var(--accent-bg);
+            color: var(--primary-text);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--accent-text);
+            box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2);
+        }
+
+        .status {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: rgba(0, 255, 136, 0.2);
+            border: 1px solid var(--accent-text);
+            color: var(--accent-text);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .activity-log::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .activity-log::-webkit-scrollbar-track {
+            background: var(--accent-bg);
+            border-radius: 4px;
+        }
+
+        .activity-log::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        .activity-log::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-text);
+        }
+
+        .scroll-anchor {
+            height: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">⚡ ULTRON AGENT</h1>
+        <p style="color: #cccccc; font-size: 1.1rem;">Activity Log Ordering - DEMONSTRATION</p>
+    </div>
+
+    <div class="status success">
+        ✅ ACTIVITY LOG ORDERING BUG - FIXED! Messages now appear in proper chronological order.
+    </div>
+
+    <div class="demo-container">
+        <div class="panel">
+            <div class="panel-header">
+                <h3 class="panel-title">📋 Activity Log (FIXED)</h3>
+                <button class="button" onclick="clearLogs()">Clear</button>
+            </div>
+            <div class="activity-log" id="activityLog">
+                <!-- Logs will be populated here -->
+                <div class="scroll-anchor" id="scrollAnchor"></div>
+            </div>
+            <div class="controls">
+                <input type="text" class="input" id="messageInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                <button class="button primary" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <h3 class="panel-title">🔧 Test Controls</h3>
+            </div>
+            <div style="padding: 20px;">
+                <h4 style="color: var(--accent-text); margin-bottom: 15px;">Test Scenarios:</h4>
+                
+                <button class="button" onclick="testUserMessage()" style="width: 100%; margin-bottom: 10px;">
+                    Test User Message
+                </button>
+                
+                <button class="button" onclick="testAIResponse()" style="width: 100%; margin-bottom: 10px;">
+                    Test AI Response
+                </button>
+                
+                <button class="button" onclick="testSystemMessage()" style="width: 100%; margin-bottom: 10px;">
+                    Test System Message
+                </button>
+                
+                <button class="button" onclick="testSequence()" style="width: 100%; margin-bottom: 20px;">
+                    Test Message Sequence
+                </button>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 6px; font-size: 0.9rem; line-height: 1.5;">
+                    <strong style="color: var(--accent-text);">Expected Behavior:</strong><br>
+                    • New messages appear at the bottom<br>
+                    • Chronological order maintained<br>
+                    • Auto-scroll to latest message<br>
+                    • Smooth animations
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let logCounter = 0;
+        const logs = [];
+
+        // Add log entry with FIXED chronological ordering
+        function addLog(type, message, provider = null) {
+            const log = {
+                id: `log_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+                timestamp: new Date(),
+                type: type,
+                message: message,
+                provider: provider
+            };
+
+            // CRITICAL FIX: Append to end for chronological order
+            logs.push(log); // NOT logs.unshift(log)!
+
+            // Keep only last 50 logs for performance
+            if (logs.length > 50) {
+                logs.shift();
+            }
+
+            renderLogs();
+            scrollToBottom();
+        }
+
+        // Render all logs in chronological order
+        function renderLogs() {
+            const logContainer = document.getElementById('activityLog');
+            const scrollAnchor = document.getElementById('scrollAnchor');
+            
+            // Clear existing logs (except scroll anchor)
+            logContainer.innerHTML = '';
+            
+            // Render logs in natural order (oldest to newest)
+            logs.forEach(log => {
+                const logElement = createLogElement(log);
+                logContainer.appendChild(logElement);
+            });
+            
+            // Re-add scroll anchor at the end
+            logContainer.appendChild(scrollAnchor);
+        }
+
+        // Create log element
+        function createLogElement(log) {
+            const logDiv = document.createElement('div');
+            logDiv.className = `log-entry log-${log.type}`;
+            
+            const timeStr = log.timestamp.toLocaleTimeString('en-US', {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            
+            const icon = getLogIcon(log.type);
+            
+            logDiv.innerHTML = `
+                <div class="log-header">
+                    <span>${icon}</span>
+                    <span class="log-type">${log.type}</span>
+                    <span class="log-time">${timeStr}</span>
+                    ${log.provider ? `<span style="color: #666; font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 1px 4px; border-radius: 2px;">${log.provider}</span>` : ''}
+                </div>
+                <div style="color: #ddd;">${log.message}</div>
+            `;
+            
+            return logDiv;
+        }
+
+        // Get icon for log type
+        function getLogIcon(type) {
+            switch (type) {
+                case 'user': return '👤';
+                case 'ai': return '🤖';
+                case 'system': return '⚙️';
+                default: return '📝';
+            }
+        }
+
+        // Scroll to bottom (FIXED behavior)
+        function scrollToBottom() {
+            const scrollAnchor = document.getElementById('scrollAnchor');
+            scrollAnchor.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Clear all logs
+        function clearLogs() {
+            logs.length = 0;
+            renderLogs();
+            addLog('system', 'Activity log cleared');
+        }
+
+        // Send user message
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                addLog('user', message);
+                input.value = '';
+                
+                // Simulate AI response after delay
+                setTimeout(() => {
+                    addLog('ai', `AI Response to: "${message}"`, 'OpenAI/GPT-3.5');
+                }, 1000);
+            }
+        }
+
+        // Handle Enter key
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Test functions
+        function testUserMessage() {
+            addLog('user', 'This is a test user message');
+        }
+
+        function testAIResponse() {
+            addLog('ai', 'This is a test AI response from the assistant', 'OpenAI/GPT-4');
+        }
+
+        function testSystemMessage() {
+            addLog('system', 'System diagnostic completed successfully');
+        }
+
+        function testSequence() {
+            const messages = [
+                { type: 'user', message: 'Hello, how are you?' },
+                { type: 'ai', message: 'Hello! I\'m doing well, thank you for asking.', provider: 'OpenAI/GPT-3.5' },
+                { type: 'system', message: 'Connection to AI provider successful' },
+                { type: 'user', message: 'What\'s the weather like?' },
+                { type: 'ai', message: 'I don\'t have access to real-time weather data, but I can help you find weather information!', provider: 'OpenAI/GPT-3.5' }
+            ];
+            
+            messages.forEach((msg, index) => {
+                setTimeout(() => {
+                    addLog(msg.type, msg.message, msg.provider);
+                }, index * 500);
+            });
+        }
+
+        // Initialize with welcome message
+        document.addEventListener('DOMContentLoaded', function() {
+            addLog('system', 'Ultron Agent Activity Log initialized - ordering FIXED!');
+            addLog('system', '✅ Messages now appear in chronological order (oldest → newest)');
+            addLog('system', 'Try sending messages to test the fix!');
+        });
+    </script>
+</body>
+</html>

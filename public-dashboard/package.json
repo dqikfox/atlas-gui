@@ -1,0 +1,36 @@
+{
+  "name": "ultron-agent-dashboard",
+  "version": "1.0.0",
+  "description": "ULTRON Agent Web Dashboard - Real-time monitoring and control interface",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8009",
+    "serve": "python -m http.server 8009",
+    "deploy": "surge ./",
+    "build": "echo 'No build process needed - pure HTML/CSS/JS'"
+  },
+  "keywords": [
+    "ultron",
+    "agent",
+    "dashboard",
+    "monitoring",
+    "real-time",
+    "ai",
+    "control-panel"
+  ],
+  "author": "MiniMax Agent",
+  "license": "MIT",
+  "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ultron-agent-dashboard.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

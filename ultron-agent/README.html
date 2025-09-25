@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultron Agent - README</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff88, #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+        .section {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #00ff88;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 5px;
+        }
+        .fix-highlight {
+            background: #004d00;
+            border-left: 4px solid #00ff88;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .fix-highlight strong {
+            color: #00ff88;
+        }
+        code {
+            background: #2a2a2a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #00aaff;
+        }
+        .command {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            color: #00aaff;
+            margin: 10px 0;
+        }
+        ul {
+            color: #dddddd;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">⚡ ULTRON AGENT</h1>
+        <p class="subtitle">Advanced AI Assistant Interface with Fixed Activity Log Ordering</p>
+    </div>
+
+    <div class="section">
+        <h2>🔧 Critical Bug Fixes Applied</h2>
+        <div class="fix-highlight">
+            <strong>ACTIVITY LOG ORDERING - FIXED</strong><br>
+            The major issue where new messages appeared at the top instead of bottom has been resolved. 
+            Messages now appear in proper chronological order (oldest to newest) with auto-scroll to latest.
+        </div>
+        
+        <h3>What was fixed:</h3>
+        <ul>
+            <li><strong>useActivityLogs.ts:</strong> Changed from prepending to appending new logs</li>
+            <li><strong>ActivityLogPanel.tsx:</strong> Proper rendering order with scroll anchoring</li>
+            <li><strong>Auto-scroll behavior:</strong> Smooth scrolling to bottom for new messages</li>
+            <li><strong>Message ordering:</strong> Chronological display (oldest → newest)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🚀 Quick Start</h2>
+        
+        <h3>1. Install Dependencies</h3>
+        <div class="command">cd /workspace/ultron-agent && npm install</div>
+        
+        <h3>2. Start Development Server</h3>
+        <div class="command">npm start</div>
+        
+        <h3>3. Build for Production</h3>
+        <div class="command">npm run build</div>
+    </div>
+
+    <div class="section">
+        <h2>✨ Features</h2>
+        <ul>
+            <li><strong>Multi-Provider AI Chat:</strong> OpenAI, Anthropic, Google, Groq, Ollama support</li>
+            <li><strong>Activity Log:</strong> Real-time chronological message tracking (FIXED)</li>
+            <li><strong>System Monitor:</strong> Live CPU, Memory, Disk usage metrics</li>
+            <li><strong>Automation Panel:</strong> PyAutoGUI integration for desktop automation</li>
+            <li><strong>Diagnostic Tools:</strong> Built-in system health checks</li>
+            <li><strong>Dark Theme:</strong> Futuristic interface with neon accents</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🏗️ Architecture</h2>
+        <ul>
+            <li><strong>Frontend:</strong> React 18 + TypeScript</li>
+            <li><strong>Backend:</strong> Supabase Edge Functions (Deno)</li>
+            <li><strong>Database:</strong> PostgreSQL (Supabase)</li>
+            <li><strong>Icons:</strong> Lucide React</li>
+            <li><strong>Styling:</strong> CSS Custom Properties</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📁 Project Structure</h2>
+        <div class="command">src/
+├── components/          # React components
+│   ├── Header.tsx
+│   ├── ActivityLogPanel.tsx    # FIXED ordering
+│   ├── AIChatPanel.tsx
+│   ├── SystemMonitorPanel.tsx
+│   └── AutomationPanel.tsx
+├── hooks/              # Custom React hooks
+│   ├── useActivityLogs.ts     # FIXED chronological order
+│   ├── useAIChat.ts
+│   └── useSystemMetrics.ts
+├── types/              # TypeScript definitions
+├── App.tsx            # Main application
+└── index.tsx          # Entry point</div>
+    </div>
+
+    <div class="section">
+        <h2>🔐 Backend Configuration</h2>
+        <p>The Supabase backend requires proper API key configuration:</p>
+        <ul>
+            <li>OpenAI API Key</li>
+            <li>Anthropic API Key</li>
+            <li>Google AI API Key</li>
+            <li>Groq API Key</li>
+            <li>Other provider keys as needed</li>
+        </ul>
+        <p>Keys are securely stored as Supabase environment secrets.</p>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Next Steps</h2>
+        <ul>
+            <li>✅ Activity Log ordering fixed</li>
+            <li>🔄 Backend API integration testing</li>
+            <li>🔄 Ollama local model detection</li>
+            <li>🔄 PyAutoGUI automation implementation</li>
+            <li>🔄 Advanced system diagnostics</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultron Agent - Atlas Style Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Courier New', monospace;
+            color: #00ff41;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff41, #39ff14, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #cccccc;
+            letter-spacing: 2px;
+        }
+        
+        .atlas-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+            align-items: center;
+        }
+        
+        .image-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 65, 0.3),
+                0 0 60px rgba(255, 170, 0, 0.2),
+                inset 0 0 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, #00ff41, #ffaa00) border-box;
+            animation: borderGlow 3s ease-in-out infinite alternate;
+        }
+        
+        .atlas-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(1.1) contrast(1.2) saturate(1.3);
+            transition: all 0.3s ease;
+        }
+        
+        .atlas-image:hover {
+            filter: brightness(1.3) contrast(1.4) saturate(1.5);
+            transform: scale(1.02);
+        }
+        
+        .description {
+            padding: 20px;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .description h3 {
+            color: #00ff41;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+            color: #cccccc;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #ffaa00;
+            font-size: 1.2rem;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .comparison-card {
+            background: rgba(26, 26, 46, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .comparison-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .comparison-card:hover:before {
+            left: 100%;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3);
+            border-color: #00ff41;
+        }
+        
+        .card-title {
+            color: #00ff41;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 170, 0, 0.3);
+        }
+        
+        .specs {
+            background: rgba(10, 10, 10, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 170, 0, 0.3);
+        }
+        
+        .specs h3 {
+            color: #ffaa00;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .spec-item {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffaa00;
+        }
+        
+        .spec-label {
+            color: #ffaa00;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .spec-value {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(0, 255, 65, 0.5); }
+            to { text-shadow: 0 0 30px rgba(0, 255, 65, 0.8), 0 0 40px rgba(255, 170, 0, 0.3); }
+        }
+        
+        @keyframes borderGlow {
+            from { box-shadow: 0 0 30px rgba(0, 255, 65, 0.3), 0 0 60px rgba(255, 170, 0, 0.2); }
+            to { box-shadow: 0 0 40px rgba(0, 255, 65, 0.5), 0 0 80px rgba(255, 170, 0, 0.4); }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid rgba(0, 255, 65, 0.3);
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .atlas-showcase {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🔴 ULTRON ATLAS 🔴</h1>
+            <p class="subtitle">CYBERPUNK AI AGENT DESIGN</p>
+        </div>
+        
+        <div class="atlas-showcase">
+            <div class="image-container">
+                <img src="../imgs/epic_cyberpunk_robot_blue_armor_orange_energy_lightning_concept_art.jpg" alt="Ultron Atlas Design" class="atlas-image">
+            </div>
+            
+            <div class="description">
+                <h3>🚀 ULTRON ATLAS SPECIFICATIONS</h3>
+                <ul class="feature-list">
+                    <li><strong>Deep Blue Metallic Armor</strong> - Segmented protective plating with industrial aesthetic</li>
+                    <li><strong>Orange Energy Core System</strong> - Bright glowing power nodes and energy lines</li>
+                    <li><strong>Angular Helmet Design</strong> - Reflective visor with integrated HUD systems</li>
+                    <li><strong>Atmospheric Lightning Integration</strong> - Environmental power absorption capabilities</li>
+                    <li><strong>Heavy-Duty Combat Configuration</strong> - Bulky proportions optimized for durability</li>
+                    <li><strong>Multi-Layered Articulation</strong> - Complex joint systems for enhanced mobility</li>
+                    <li><strong>Cinematic Concept Art Quality</strong> - Professional-grade visual design</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="specs">
+            <h3>⚡ TECHNICAL SPECIFICATIONS</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Armor Material</div>
+                    <div class="spec-value">Deep Blue Metallic Composite</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Energy System</div>
+                    <div class="spec-value">Orange Core Power Matrix</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Visual Style</div>
+                    <div class="spec-value">Cyberpunk Atlas Aesthetic</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Design Elements</div>
+                    <div class="spec-value">Angular, Industrial, Combat-Ready</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Lighting Effects</div>
+                    <div class="spec-value">Atmospheric Lightning Integration</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Application</div>
+                    <div class="spec-value">Ultron Agent Project Branding</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <h4 class="card-title">🎨 ORIGINAL ATLAS STYLE</h4>
+                <img src="../user_input_files/assets_task_01jygws3s3ep8sfq8c1h8cn2pa_1750766611_img_0.webp" alt="Original Atlas" class="card-image">
+                <p>Sleek cyberpunk design with blue armor and orange energy lines</p>
+            </div>
+            
+            <div class="comparison-card">
+                <h4 class="card-title">⚡ ULTRON ATLAS VERSION</h4>
+                <img src="../imgs/epic_cyberpunk_robot_blue_armor_orange_energy_lightning_concept_art.jpg" alt="Ultron Atlas" class="card-image">
+                <p>Enhanced with atmospheric lightning and heavy-duty combat aesthetics</p>
+            </div>
+            
+            <div class="comparison-card">
+                <h4 class="card-title">🔧 ARMOR DETAILS</h4>
+                <img src="../imgs/blue_metallic_sci_fi_robot_armor_orange_glow_futuristic_details.jpg" alt="Armor Details" class="card-image">
+                <p>Close-up of blue metallic armor with orange glowing energy systems</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Created by MiniMax Agent • Ultron Agent Project • 2025</p>
+            <p>Based on Atlas-style cyberpunk aesthetic with enhanced atmospheric elements</p>
+        </div>
+    </div>
+</body>
+</html>

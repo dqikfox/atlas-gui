@@ -1,0 +1,340 @@
+[
+  {
+    "query": "Close-up of blue metallic robot armor with orange energy lines and futuristic details",
+    "image_info": {
+      "url": "https://images.stockcake.com/public/a/e/f/aef8ab06-1e17-44c2-823d-7d30e686d224_large/ethereal-combat-armor-stockcake.jpg",
+      "file_path": "/workspace/imgs/blue_metallic_sci_fi_robot_armor_orange_glow_futuristic_details.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 42013,
+      "width": 384,
+      "height": 672,
+      "total_pixels": 258048,
+      "basic_score": 0.7750485088338932
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 98.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is highly relevant to both the search query and the prompt, showcasing a detailed blue metallic robot armor with prominent orange glowing elements and futuristic details. The clarity is excellent, and there are no watermarks. The overall quality and composition are professional and striking.",
+      "file_name": "blue_metallic_sci_fi_robot_armor_orange_glow_futuristic_details.jpg",
+      "caption": "A highly detailed, full-body render of a futuristic sci-fi robot, standing upright against a dark background. The robot is encased in sleek, light blue metallic armor that shimmers with reflections. Intricate segments of the armor reveal glowing orange energy lines and components within, particularly around the joints, chest, and head. The helmet features a dark visor with an internal orange glow, adding to its mysterious and advanced aesthetic. The overall design emphasizes a powerful and technologically sophisticated appearance.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "Close-up of blue metallic robot armor with orange energy lines and futuristic details",
+    "image_info": {
+      "url": "https://images.stockcake.com/public/c/8/4/c8474418-494f-427c-b573-b9e351fd78fc_large/exoskeleton-power-suit-stockcake.jpg",
+      "file_path": "/workspace/imgs/blue_metallic_sci_fi_robot_armor_orange_glow_industrial.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 40650,
+      "width": 512,
+      "height": 512,
+      "total_pixels": 262144,
+      "basic_score": 0.7744689792454891
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 90.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 90.0,
+      "explanation": "The image is highly relevant to the search query, showcasing a sci-fi robot armor with prominent blue metallic textures and subtle orange glowing elements. It also largely matches the prompt, depicting blue metallic armor with futuristic details, though it's a full-body shot rather than a close-up. The clarity and overall professional quality are excellent, with no watermarks.",
+      "file_name": "blue_metallic_sci_fi_robot_armor_orange_glow_industrial.jpg",
+      "caption": "A striking full-body view of a futuristic robot or armored figure standing in a dimly lit, atmospheric industrial environment. The highly detailed armor is primarily a sleek blue metallic, featuring segmented plates and subtle orange-red glowing accents that suggest internal energy, particularly around the chest and joints. The robot's helmet is equipped with a luminous green visor, adding to its imposing presence. Wisps of smoke or mist permeate the air, enhancing the sci-fi ambiance of the warehouse-like setting.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "Close-up of blue metallic robot armor with orange energy lines and futuristic details",
+    "image_info": {
+      "url": "https://images.stockcake.com/public/8/5/f/85fa0a14-9388-4e96-9b9c-db87277d6d9e_large/futuristic-robotic-armor-stockcake.jpg",
+      "file_path": "/workspace/imgs/sci-fi_robot_armor_blue_metallic_orange_glow_futuristic_details_close-up.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 55840,
+      "width": 728,
+      "height": 408,
+      "total_pixels": 297024,
+      "basic_score": 0.7872635926855296
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 98.0,
+      "explanation": "The image is an exceptional match for both the search query and the prompt. It clearly depicts blue metallic robot armor with vibrant orange energy lines and futuristic details in a close-up shot. The clarity is excellent, composition is professional, and there are no watermarks. The lighting and color contrast are particularly striking.",
+      "file_name": "sci-fi_robot_armor_blue_metallic_orange_glow_futuristic_details_close-up.jpg",
+      "caption": "A detailed close-up of futuristic robot armor, showcasing dark blue metallic plating with intricate geometric designs. Vibrant orange and red energy lines and glowing points illuminate the armor, creating a striking contrast against the dark background, emphasizing advanced technology and sci-fi aesthetics.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A futuristic cyberpunk robot with blue metallic armor, glowing orange energy lines, and bright eyes in Atlas style",
+    "image_info": {
+      "url": "https://media.craiyon.com/2025-07-29/RAI_4Xf8TwWsgj-9K2rMpw.webp",
+      "file_path": "/workspace/imgs/cyberpunk_robot_warrior_glowing_blue_eyes_concept_art.jpg",
+      "img_format": "WEBP",
+      "mode": "RGB",
+      "file_size": 204402,
+      "width": 1024,
+      "height": 1024,
+      "total_pixels": 1048576,
+      "basic_score": 0.9462506608130324
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 85.0,
+      "clarity_score": 98.0,
+      "watermark_score": 75.0,
+      "overall_score": 90.0,
+      "explanation": "The image is highly relevant to the 'cyberpunk robot warrior glowing eyes concept art' search query, featuring a detailed robot in a neon-lit cyberpunk setting with bright blue glowing eyes. While the armor has blue metallic reflections, it's not distinctly 'blue armor' as per the prompt, and it lacks the specified 'glowing orange energy lines'. The image quality is excellent, but a small watermark is present in the bottom right corner.",
+      "file_name": "cyberpunk_robot_warrior_glowing_blue_eyes_concept_art.jpg",
+      "caption": "A futuristic cyberpunk robot warrior with dark metallic armor and piercing blue glowing eyes stands powerfully in a rain-slicked, neon-lit urban alleyway. The detailed concept art highlights the robot's robust design, featuring sharp claws and an integrated blade, conveying a formidable combat aesthetic.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A futuristic cyberpunk robot with blue metallic armor, glowing orange energy lines, and bright eyes in Atlas style",
+    "image_info": {
+      "url": "https://thumbs.dreamstime.com/b/generative-ai-futuristic-warrior-high-tech-armor-glowing-red-eyes-business-concept-generative-ai-futuristic-warrior-358431926.jpg",
+      "file_path": "/workspace/imgs/cyberpunk_robot_warrior_blue_armor_glowing_eyes_concept_art.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 84933,
+      "width": 505,
+      "height": 900,
+      "total_pixels": 454500,
+      "basic_score": 0.83469642971661
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 95.0,
+      "clarity_score": 95.0,
+      "watermark_score": 20.0,
+      "overall_score": 85.0,
+      "explanation": "The image is highly relevant to both the search query and prompt, featuring a futuristic cyberpunk robot warrior with dark blue metallic armor, prominent glowing red/orange eyes and energy lines. The artistic style is excellent and aligns well with concept art and an 'Atlas style' aesthetic. Clarity and detail are superb. However, a significant 'dreamstime' watermark is present, substantially lowering the watermark score.",
+      "file_name": "cyberpunk_robot_warrior_blue_armor_glowing_eyes_concept_art.jpg",
+      "caption": "A detailed, dark concept art illustration of a futuristic cyberpunk robot warrior. The figure wears fragmented, metallic dark blue and black armor, featuring glowing red and orange energy accents and piercing bright red eyes. The powerful and imposing 'Atlas style' aesthetic is enhanced by a dramatic, ember-filled background.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A futuristic cyberpunk robot with blue metallic armor, glowing orange energy lines, and bright eyes in Atlas style",
+    "image_info": {
+      "url": "https://images.stockcake.com/public/e/5/b/e5b681e8-de60-47e3-bf0a-2f00bd4a388e_large/glowing-cyber-warrior-stockcake.jpg",
+      "file_path": "/workspace/imgs/cyberpunk-robot-warrior-neon-glow-cityscape-concept-art.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 83560,
+      "width": 512,
+      "height": 512,
+      "total_pixels": 262144,
+      "basic_score": 0.7807739809606495
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 75.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 90.0,
+      "explanation": "The image strongly matches the core concept of a cyberpunk robot warrior and concept art, and the overall quality is excellent with high clarity and no watermarks. However, there are some color discrepancies with the specific requirements of the search query and prompt. The armor is predominantly white/light gray with blue and pink glowing elements, rather than 'blue metallic armor' or 'blue armor' as specified. The glowing energy lines are blue and pink/red, not 'orange energy lines' as requested in the prompt. The eyes are red/purple, not blue as implied by the query. Despite these color deviations, the image is visually striking and professionally executed.",
+      "file_name": "cyberpunk-robot-warrior-neon-glow-cityscape-concept-art.jpg",
+      "caption": "A powerful futuristic cyberpunk robot warrior stands prominently in a neon-lit, blurred cityscape. The robot features sleek, angular white and light gray metallic armor adorned with vibrant blue and pink glowing energy lines. Its distinctive head includes pointed ear-like appendages and intense red/purple glowing eyes. The composition is rendered in a detailed concept art style, emphasizing its imposing and advanced design.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A powerful cyberpunk AI robot with blue metallic armor, glowing orange energy lines, and bright blue eyes in cinematic lighting for Ultron Agent",
+    "image_info": {
+      "url": "https://media.easy-peasy.ai/27feb2bb-aeb4-4a83-9fb6-8f3f2a15885e/b2dc4c4c-af32-4897-a5cb-de1a8afadcf9.png",
+      "file_path": "/workspace/imgs/powerful_cyberpunk_neon_robot_cinematic_art.jpg",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 1494127,
+      "width": 1024,
+      "height": 1024,
+      "total_pixels": 1048576,
+      "basic_score": 0.9213836294734288
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 70.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 92.0,
+      "explanation": "The image successfully portrays a powerful cyberpunk AI robot in a cinematic concept art style with bright eyes and excellent clarity. However, it deviates from the prompt's request for 'blue metallic armor' and 'glowing orange energy lines,' instead featuring dark armor with prominent neon pink and cyan glowing lines. The 'Ultron' aspect is generic, not specific. Despite the color discrepancy, the image quality and aesthetic are outstanding.",
+      "file_name": "powerful_cyberpunk_neon_robot_cinematic_art.jpg",
+      "caption": "A full-body image of a powerful, menacing cyberpunk AI robot with intricate dark metallic armor, illuminated by glowing neon pink and cyan energy lines. The robot stands tall in a dramatic, dark futuristic environment filled with glowing computer screens, industrial machinery, and a bright overhead light, all rendered in a cinematic concept art style.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A powerful cyberpunk AI robot with blue metallic armor, glowing orange energy lines, and bright blue eyes in cinematic lighting for Ultron Agent",
+    "image_info": {
+      "url": "https://r2.starryai.com/results/1062384584/b89cedd6-7798-4312-b368-ad9a7697e00f.webp",
+      "file_path": "/workspace/imgs/cyberpunk_ultron_agent_concept_art_red_glow.jpg",
+      "img_format": "WEBP",
+      "mode": "RGB",
+      "file_size": 147760,
+      "width": 888,
+      "height": 1184,
+      "total_pixels": 1051392,
+      "basic_score": 0.9242550601283254
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 65.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 90.0,
+      "explanation": "The image beautifully captures the essence of a 'powerful cyberpunk AI robot' in a 'cinematic concept art' style, consistent with an 'Ultron agent' aesthetic. However, it significantly deviates from the requested color palette: the armor is dark green and black instead of blue, and the glowing elements and eyes are red, not orange and blue, respectively. Despite the color mismatches, the quality and composition are excellent.",
+      "file_name": "cyberpunk_ultron_agent_concept_art_red_glow.jpg",
+      "caption": "A menacing, cyberpunk-style robot or alien figure with a complex dark green and black mechanical body, glowing red eyes, and red internal lights stands in a rainy, neon-lit city street. The character features intricate wiring, skeletal-like structures, and a textured head resembling a skull with headphones, all depicted in a cinematic concept art style.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A powerful cyberpunk AI robot with blue metallic armor, glowing orange energy lines, and bright blue eyes in cinematic lighting for Ultron Agent",
+    "image_info": {
+      "url": "https://r2.starryai.com/results/1062805617/81bd7abd-5b41-415b-b6e4-5cbbe2454f29.webp",
+      "file_path": "/workspace/imgs/cyberpunk_ai_robot_orange_eyes_neon_background_cinematic_concept_art.jpg",
+      "img_format": "WEBP",
+      "mode": "RGB",
+      "file_size": 149128,
+      "width": 768,
+      "height": 1024,
+      "total_pixels": 786432,
+      "basic_score": 0.916123831072403
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 65.0,
+      "clarity_score": 98.0,
+      "watermark_score": 100.0,
+      "overall_score": 92.0,
+      "explanation": "The image excellently captures the 'powerful cyberpunk AI robot' and 'cinematic concept art' aspects with high clarity and a dramatic aesthetic. The robot features glowing orange eyes and a background with vibrant neon pink and blue lines, which aligns with 'glowing orange energy lines' (though primarily in the eyes and background, not on armor). However, it deviates significantly from the 'blue metallic armor' (armor is metallic silver/grey with purple-pink tones) and 'bright blue eyes' (eyes are orange). The 'Ultron' likeness is also not strongly present.",
+      "file_name": "cyberpunk_ai_robot_orange_eyes_neon_background_cinematic_concept_art.jpg",
+      "caption": "A striking cinematic concept art portrait of a powerful cyberpunk AI robot from the chest up, gazing to the right with intense glowing orange eyes. Its metallic silver and purple-toned armor reveals intricate internal mechanisms, exposed wires, and stylized biological components resembling lungs and muscle tissue. The robot's head features complex bionic enhancements. The dark background is filled with a dense, luminous network of neon pink and bright blue digital circuit lines, creating a deep, futuristic, and high-tech atmosphere.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A powerful cyberpunk AI robot with blue metallic armor, glowing orange energy lines, and bright blue eyes in cinematic lighting for Ultron Agent",
+    "image_info": {
+      "url": "https://media.craiyon.com/2025-07-20/LXOH1JUYQkuRffwdkj3mlw.webp",
+      "file_path": "/workspace/imgs/powerful_cyberpunk_ai_robot_blue_glow_cinematic_concept_art.jpg",
+      "img_format": "WEBP",
+      "mode": "RGB",
+      "file_size": 156052,
+      "width": 896,
+      "height": 1280,
+      "total_pixels": 1146880,
+      "basic_score": 0.9153764575314578
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 75.0,
+      "clarity_score": 95.0,
+      "watermark_score": 80.0,
+      "overall_score": 90.0,
+      "explanation": "The image beautifully depicts a powerful cyberpunk AI robot with bright blue eyes and a cinematic concept art style, aligning well with most aspects of the search query and prompt. The clarity and composition are excellent. However, the armor itself is dark grey/black rather than 'blue metallic armor', and crucially, the energy lines are glowing blue instead of the requested 'glowing orange energy lines' and 'orange glow'. There is a small watermark in the bottom right corner.",
+      "file_name": "powerful_cyberpunk_ai_robot_blue_glow_cinematic_concept_art.jpg",
+      "caption": "A powerful, menacing cyberpunk AI robot stands illuminated in a futuristic, neon-lit cityscape. The robot features dark, intricate metallic armor accented with bright, glowing blue energy lines and piercing blue eyes, presented in a dramatic, cinematic concept art style.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "An epic cyberpunk AI robot portrait with deep blue metallic armor, bright orange energy lines flowing through the armor, glowing blue eyes, angular helmet design, atmospheric neon lighting, cinematic quality",
+    "image_info": {
+      "url": "https://images.stockcake.com/public/4/2/e/42e7c69b-b1ea-4c46-a217-bcf6585e2bb9_large/titan-meets-lightning-stockcake.jpg",
+      "file_path": "/workspace/imgs/epic_cyberpunk_robot_blue_armor_orange_energy_lightning_concept_art.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 70369,
+      "width": 384,
+      "height": 672,
+      "total_pixels": 258048,
+      "basic_score": 0.7792634490403352
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 98.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 97.0,
+      "explanation": "The image perfectly matches the search query and prompt. It features a magnificent cyberpunk robot with deep blue metallic armor, prominent orange energy lines, and an angular helmet design. The atmospheric blue lightning provides a cinematic quality, and the overall clarity and composition are excellent with no watermarks.",
+      "file_name": "epic_cyberpunk_robot_blue_armor_orange_energy_lightning_concept_art.jpg",
+      "caption": "An imposing, epic cyberpunk robot with deep blue metallic armor stands majestically between towering rock formations, illuminated by dramatic blue lightning striking from the stormy sky. Bright orange energy lines glow intensely across its complex mechanical structure, particularly on its chest, shoulders, and limbs, casting a warm contrast to the cool blues of the environment. The robot's angular helmet features reflective blue eye lenses. The ground beneath is a rugged terrain with reflections of the orange glow, contributing to a powerful and cinematic concept art aesthetic.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "An epic cyberpunk AI robot portrait with deep blue metallic armor, bright orange energy lines flowing through the armor, glowing blue eyes, angular helmet design, atmospheric neon lighting, cinematic quality",
+    "image_info": {
+      "url": "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://media.easy-peasy.ai/27feb2bb-aeb4-4a83-9fb6-8f3f2a15885e/140e06f8-fbb1-4644-8653-c5c5d14327f9.png",
+      "file_path": "/workspace/imgs/blue_metallic_robot_armor_sunset_concept_art.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 64270,
+      "width": 700,
+      "height": 700,
+      "total_pixels": 490000,
+      "basic_score": 0.8497872589847526
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 75.0,
+      "clarity_score": 98.0,
+      "watermark_score": 100.0,
+      "overall_score": 88.0,
+      "explanation": "The image features a high-quality, blue metallic robot with glowing blue eyes and an angular helmet, matching several key aspects of the query and prompt. However, it misses the 'bright orange energy lines flowing through the armor' (it has yellow/gold accents and orange in the background sky) and the environment leans more fantasy/sci-fi than traditional 'cyberpunk'. The 'portrait' aspect is also inaccurate as it's a full-body shot. Despite these discrepancies, the visual quality and composition are excellent.",
+      "file_name": "blue_metallic_robot_armor_sunset_concept_art.jpg",
+      "caption": "A striking full-body concept art illustration of a powerful humanoid robot, featuring intricate deep blue metallic armor with yellow/gold accents, glowing blue eyes, and an angular, horned helmet design. The robot stands heroically amidst a rugged, mountainous landscape under a dramatic sunset sky, painted with warm orange and purple hues and subtle light streaks.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "An epic cyberpunk AI robot portrait with deep blue metallic armor, bright orange energy lines flowing through the armor, glowing blue eyes, angular helmet design, atmospheric neon lighting, cinematic quality",
+    "image_info": {
+      "url": "https://images.stockcake.com/public/e/6/d/e6daf1b6-731b-4c3e-8b6d-8d17136b46fb_large/neon-cyber-warrior-stockcake.jpg",
+      "file_path": "/workspace/imgs/cyberpunk_blue_robot_neon_armor_concept_art.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 65436,
+      "width": 384,
+      "height": 672,
+      "total_pixels": 258048,
+      "basic_score": 0.7785375243477377
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 60.0,
+      "clarity_score": 98.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image beautifully captures an epic cyberpunk AI robot with deep blue metallic armor, glowing blue eyes, an angular helmet, and atmospheric neon lighting, fulfilling most aspects of the search query and prompt. The clarity and overall quality are exceptional. However, it significantly deviates from the request for 'bright orange energy lines,' featuring glowing blue and magenta/pink lines instead. This color mismatch is the primary reason for the lower relevance score.",
+      "file_name": "cyberpunk_blue_robot_neon_armor_concept_art.jpg",
+      "caption": "An impressive full-body concept art image of a futuristic AI robot in deep blue metallic armor, featuring intricate glowing blue and magenta energy lines. The robot's angular helmet and glowing blue eyes are prominent against a dark background illuminated by atmospheric neon lighting, evoking a strong cyberpunk aesthetic.",
+      "recommend": true,
+      "error": ""
+    }
+  }
+]

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULTRON Agent - AI Assistant Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --ultron-primary: #00ff88;
+            --ultron-secondary: #00aaff;
+            --ultron-bg-primary: #0a0a0a;
+            --ultron-bg-secondary: #1a1a1a;
+            --ultron-bg-accent: #2a2a2a;
+            --ultron-text-primary: #ffffff;
+            --ultron-text-secondary: #cccccc;
+            --ultron-border: #333333;
+            --ultron-error: #ff4444;
+            --ultron-warning: #ffaa00;
+        }
+
+        body {
+            background: var(--ultron-bg-primary);
+            color: var(--ultron-text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .ultron-gradient {
+            background: linear-gradient(135deg, var(--ultron-primary), var(--ultron-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ultron-panel {
+            background: var(--ultron-bg-secondary);
+            border: 1px solid var(--ultron-border);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .ultron-btn {
+            background: var(--ultron-bg-accent);
+            border: 1px solid var(--ultron-border);
+            color: var(--ultron-text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .ultron-btn:hover {
+            border-color: var(--ultron-primary);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .ultron-btn-primary {
+            background: var(--ultron-primary);
+            color: var(--ultron-bg-primary);
+            border-color: var(--ultron-primary);
+        }
+
+        .ultron-btn-primary:hover {
+            background: #00cc66;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .ultron-input {
+            background: var(--ultron-bg-accent);
+            border: 1px solid var(--ultron-border);
+            color: var(--ultron-text-primary);
+            border-radius: 8px;
+        }
+
+        .ultron-input:focus {
+            border-color: var(--ultron-primary);
+            box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.2);
+            outline: none;
+        }
+
+        .status-online {
+            color: var(--ultron-primary);
+        }
+
+        .status-offline {
+            color: var(--ultron-error);
+        }
+
+        .status-warning {
+            color: var(--ultron-warning);
+        }
+
+        .log-entry {
+            border-left: 3px solid;
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .log-user {
+            border-left-color: var(--ultron-secondary);
+            background: rgba(0, 170, 255, 0.1);
+        }
+
+        .log-ai {
+            border-left-color: var(--ultron-primary);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .log-system {
+            border-left-color: var(--ultron-warning);
+            background: rgba(255, 170, 0, 0.1);
+        }
+
+        .log-error {
+            border-left-color: var(--ultron-error);
+            background: rgba(255, 68, 68, 0.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .scrollbar-custom::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollbar-custom::-webkit-scrollbar-track {
+            background: var(--ultron-bg-accent);
+            border-radius: 4px;
+        }
+
+        .scrollbar-custom::-webkit-scrollbar-thumb {
+            background: var(--ultron-border);
+            border-radius: 4px;
+        }
+
+        .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+            background: var(--ultron-primary);
+        }
+
+        .grid-responsive {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ai-model-card {
+            background: var(--ultron-bg-secondary);
+            border: 1px solid var(--ultron-border);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .ai-model-card:hover {
+            border-color: var(--ultron-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 255, 136, 0.2);
+        }
+
+        .ai-model-card.active {
+            border-color: var(--ultron-primary);
+            background: rgba(0, 255, 136, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-700 px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-robot text-3xl ultron-gradient"></i>
+                    <h1 class="text-2xl font-bold ultron-gradient">ULTRON AGENT</h1>
+                </div>
+                <div class="text-sm text-gray-400 font-mono">
+                    v2.1.0 | Advanced AI Assistant Framework
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-green-400 pulse"></div>
+                    <span class="text-sm status-online">System Online</span>
+                </div>
+                <button id="settingsBtn" class="ultron-btn px-4 py-2 rounded-lg flex items-center space-x-2">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+                <div class="text-sm text-gray-400 font-mono" id="currentTime"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- AI Models Section -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-brain mr-3 text-green-400"></i>
+                AI Models & Providers
+            </h2>
+            <div class="grid-responsive" id="aiModelsGrid">
+                <!-- AI model cards will be populated here -->
+            </div>
+        </section>
+
+        <!-- Main Interface Grid -->
+        <div class="grid lg:grid-cols-3 gap-6">
+            <!-- AI Chat Panel -->
+            <div class="lg:col-span-2">
+                <div class="ultron-panel p-6 h-96">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold flex items-center">
+                            <i class="fas fa-comments mr-2 text-blue-400"></i>
+                            AI Chat Interface
+                        </h3>
+                        <div class="flex items-center space-x-2">
+                            <select id="providerSelect" class="ultron-input px-3 py-1 text-sm">
+                                <option value="openai">OpenAI</option>
+                                <option value="anthropic">Anthropic</option>
+                                <option value="nvidia">NVIDIA NIM</option>
+                                <option value="ollama">Ollama (Local)</option>
+                            </select>
+                            <button id="voiceToggle" class="ultron-btn px-3 py-1 rounded-md">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="chatMessages" class="h-64 overflow-y-auto scrollbar-custom mb-4 p-4 bg-black bg-opacity-30 rounded-lg">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    
+                    <div class="flex space-x-3">
+                        <input 
+                            type="text" 
+                            id="chatInput" 
+                            placeholder="Ask ULTRON anything..." 
+                            class="ultron-input flex-1 px-4 py-3"
+                        >
+                        <button id="sendBtn" class="ultron-btn-primary px-6 py-3 rounded-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Status & Controls -->
+            <div class="space-y-6">
+                <!-- System Metrics -->
+                <div class="ultron-panel p-6">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="fas fa-tachometer-alt mr-2 text-yellow-400"></i>
+                        System Metrics
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>CPU Usage</span>
+                                <span id="cpuUsage">--</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="cpuBar" class="bg-green-400 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Memory Usage</span>
+                                <span id="memoryUsage">--</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="memoryBar" class="bg-blue-400 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Disk Usage</span>
+                                <span id="diskUsage">--</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="diskBar" class="bg-purple-400 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Controls -->
+                <div class="ultron-panel p-6">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="fas fa-volume-up mr-2 text-purple-400"></i>
+                        Voice Controls
+                    </h3>
+                    <div class="space-y-3">
+                        <button id="startListening" class="ultron-btn w-full py-3 rounded-lg flex items-center justify-center space-x-2">
+                            <i class="fas fa-microphone"></i>
+                            <span>Start Listening</span>
+                        </button>
+                        <button id="stopListening" class="ultron-btn w-full py-3 rounded-lg flex items-center justify-center space-x-2" disabled>
+                            <i class="fas fa-microphone-slash"></i>
+                            <span>Stop Listening</span>
+                        </button>
+                        <div class="text-sm text-gray-400">
+                            <div>TTS Engine: <span id="ttsEngine">ElevenLabs</span></div>
+                            <div>STT Engine: <span id="sttEngine">Whisper</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation Tools -->
+                <div class="ultron-panel p-6">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="fas fa-cogs mr-2 text-red-400"></i>
+                        Automation
+                    </h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="ultron-btn py-2 px-3 rounded text-sm">
+                            <i class="fas fa-camera mr-1"></i>
+                            Screenshot
+                        </button>
+                        <button class="ultron-btn py-2 px-3 rounded text-sm">
+                            <i class="fas fa-eye mr-1"></i>
+                            OCR
+                        </button>
+                        <button class="ultron-btn py-2 px-3 rounded text-sm">
+                            <i class="fas fa-search mr-1"></i>
+                            Web Search
+                        </button>
+                        <button class="ultron-btn py-2 px-3 rounded text-sm">
+                            <i class="fas fa-file mr-1"></i>
+                            File Ops
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity Log -->
+        <section class="mt-8">
+            <div class="ultron-panel p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold flex items-center">
+                        <i class="fas fa-list mr-2 text-green-400"></i>
+                        Activity Log
+                    </h3>
+                    <button id="clearLog" class="ultron-btn px-4 py-2 rounded-lg text-sm">
+                        Clear Log
+                    </button>
+                </div>
+                <div id="activityLog" class="h-64 overflow-y-auto scrollbar-custom space-y-2">
+                    <!-- Activity log entries will appear here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="ultron-dashboard.js"></script>
+</body>
+</html>
